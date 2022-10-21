@@ -177,7 +177,7 @@ const Admin = () => {
                 <Td>{ele.incorrectOption[0]}</Td>
                 <Td>{ele.incorrectOption[1]}</Td>
                 <Td>{ele.incorrectOption[2]}</Td>
-                <Td>{ele.incorrectOption[3]}</Td>
+                <Td>{ele.correctOption}</Td>
                 <Td>{ele.correctOption}</Td>
                 <Td>
                   <Button onClick={() => handleEdit(ele)}>Edit</Button>
