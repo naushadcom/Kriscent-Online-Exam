@@ -1,2 +1,2 @@
-# Kriscent-Question-Bank
+# Kriscent-Online-Exam
 This is application on question bank.
