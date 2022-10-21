@@ -1,0 +1,40 @@
+{
+  "user": [
+    {
+      "email": "a@gmail.com",
+      "username": "aman",
+      "password": "12345",
+      "id": 1
+    },
+    {
+      "email": "w@gmail.com",
+      "username": "qawswesd",
+      "password": "1q2w3e4r",
+      "id": 2
+    },
+    {
+      "email": "a@gmail.com",
+      "username": "a",
+      "password": "12345",
+      "id": 3
+    },
+    {
+      "email": "b@gmail.com",
+      "username": "b",
+      "password": "12345",
+      "id": 4
+    }
+  ],
+  "question": [
+    {
+      "question": "what is full form of WHO?",
+      "correctOption": "c",
+      "incorrectOption": [
+        "a",
+        "b",
+        "d"
+      ],
+      "id": 1
+    }
+  ]
+}
