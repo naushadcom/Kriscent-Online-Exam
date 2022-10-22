@@ -32,7 +32,7 @@ export const adminDataReducer = (state = initState, { type, payload }) => {
 			};
 		}
 		case actionTypes.ADD_HOTEL_SUCSESS: {
-			console.log(state.hotelData)
+			// console.log(state.hotelData)
 			return {
 				...state,
 				hotelData: payload,

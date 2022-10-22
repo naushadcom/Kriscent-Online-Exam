@@ -17,15 +17,26 @@ import { getHotels } from "../pages/admin/admin.action";
 import { useDispatch, useSelector } from "react-redux";
 function BasicUsage({ isOpen, ele, onClose, onOpen }) {
   // const { isOpen, onOpen, onClose } = useDisclosure();
-  const [room, setRoom] = useState(0);
+  const [question, setQuestion] = useState("");
+  const [option1, setOption1] = useState("");
+  const [option2, setOption2] = useState("");
+  const [option3, setOption3] = useState("");
+  const [option4, setOption4] = useState("");
+  const [correct, setCorrect] = useState("");
   const dispatch = useDispatch();
-  console.log(ele);
+  // console.log(ele);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(room);
+    console.log(question);
+    console.log(option1)
     axios
-      .patch(`http://localhost:3001/question/${ele.id}`, {
-        no_of_persons: room,
+      .patch(`https://mock6naushaddeployed.herokuapp.com/question/${ele.id}`, {
+        question: question,
+        incorrectOption: option1,
+        option2: option2,
+        option3: option3,
+        option4: option4,
+        correctOption: correct,
       })
       .then((res) => dispatch(getHotels()))
       .catch((err) => console.log(err));
@@ -41,8 +52,24 @@ function BasicUsage({ isOpen, ele, onClose, onOpen }) {
           <ModalCloseButton />
           <ModalBody>
             <form onSubmit={(e) => handleSubmit(e)}>
-              <FormLabel>no of Persons</FormLabel>
-              <Input type="number" onChange={(e) => setRoom(e.target.value)} />
+              <FormLabel>Question</FormLabel>
+              <Input
+                type="text"
+                onChange={(e) => setQuestion(e.target.value)}
+              />
+              <FormLabel>Option1</FormLabel>
+              <Input type="text" onChange={(e) => setOption1(e.target.value)} />
+              <FormLabel>Option2</FormLabel>
+              <Input type="text" onChange={(e) => setOption2(e.target.value)} />
+              <FormLabel>Option3</FormLabel>
+              <Input type="text" onChange={(e) => setOption3(e.target.value)} />
+              <FormLabel>Option4</FormLabel>
+              <Input type="text" onChange={(e) => setOption4(e.target.value)} />
+              <FormLabel>Correct Answer</FormLabel>
+              <Input
+                type="text"
+                onChange={(e) => setCorrect(e.target.value)}
+              />
               <Input type="submit" />
             </form>
           </ModalBody>

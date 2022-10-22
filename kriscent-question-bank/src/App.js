@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import Admin from "./pages/admin/Admin";
-import User from "./pages/user/User";
+import Student from "./pages/Student/Student";
 function App() {
 	return (
 		<div className="App">
@@ -27,7 +27,7 @@ function App() {
 				/>
 				<Route
 					path="user"
-					element={<User />}
+					element={<Student/>}
 				/>
 			</Routes>
 		</div>

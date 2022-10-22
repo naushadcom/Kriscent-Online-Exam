@@ -25,7 +25,7 @@ const addHotelLoading = () => {
 };
 
 const addHotelsuccess = (payload) => {
-  console.log(payload);
+  // console.log(payload);
   return {
     type: actionTypes.ADD_HOTEL_SUCSESS,
     payload: payload,
@@ -39,16 +39,16 @@ const addHotelfail = () => {
 };
 export const filterData = (e) => (dispatch) => {
   axios
-    .get(`http://localhost:3001/question?category=${e}`)
+    .get(`https://mock6naushaddeployed.herokuapp.com/question?category=${e}`)
     .then((res) => {
       dispatch(addHotelsuccess(res.data));
-      console.log(res.data);
+      // console.log(res.data);
     })
     .catch((err) => console.log(err));
 };
 export const getHotels = () => (dispatch) => {
   axios
-    .get(`http://localhost:3001/question`)
+    .get(`https://mock6naushaddeployed.herokuapp.com/question`)
     .then((res) => dispatch(addHotelsuccess(res.data)))
     .catch((err) => dispatch(addHotelfail(err)));
 };

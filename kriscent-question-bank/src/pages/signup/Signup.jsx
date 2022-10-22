@@ -14,7 +14,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
@@ -42,7 +42,7 @@ const Signup = () => {
 
     localStorage.setItem("userData", JSON.stringify(payload));
     axios
-      .post(`http://localhost:3001/user`, payload)
+      .post(`https://mock6naushaddeployed.herokuapp.com/user`, payload)
       .then((res) => console.log(res.data))
       .then(() => {
         toast({
@@ -73,7 +73,15 @@ const Signup = () => {
         p="30px"
         borderRadius="10px"
       >
-        <h1>Signup</h1>
+        <h1 style={{
+            color: "Black",
+            padding: "8px",
+            borderRadius: "5px",
+            fontSize: "25px",
+            fontWeight: "bold",
+            marginBottom: "4%",
+          }}
+        >Signup</h1>
         <form onSubmit={(e) => handleSubmit(e)}>
           <FormLabel>Username</FormLabel>
           <Input type="text" onChange={(e) => setUsername(e.target.value)} />
@@ -90,9 +98,18 @@ const Signup = () => {
             onChange={(e) => setRePassword(e.target.value)}
           />
           <FormLabel></FormLabel>
-          <Input type="submit" />
+          <Input style={{
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "5px",
+              fontSize: "20px",
+              fontWeight: "bold",
+            }} type="submit" />
         </form>
       </Box>
+      <Box>
+      Already have an account ? <Link style={{marginTop:"50%",color:"blue"}} to="/login">Login Here</Link>
+	  </Box>
     </Box>
   );
 };

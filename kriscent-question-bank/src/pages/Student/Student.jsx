@@ -23,37 +23,52 @@ const User = () => {
   const [data, setData] = useState([]);
   const [value, setValue] = React.useState([]);
   useEffect(() => {
-    axios.get(`http://localhost:3001/question`).then((res) => {
-      setData(
-        res.data.sort(() => 0.5 - Math.random()).filter((e, i) => i < 10)
-      );
-    });
+    axios
+      .get(`https://mock6naushaddeployed.herokuapp.com/question`)
+      .then((res) => {
+        setData(
+          res.data.sort(() => 0.5 - Math.random()).filter((e, i) => i < 10)
+        );
+      });
   }, []);
 
   console.log(data);
   return (
-    <VStack gap="10px">
-      <h1 style={{ fontSize: "60px" }}>Question Bank</h1>
+    <Box>
+      <Heading borderBottom="4px" marginBottom="20px">
+        Question Bank
+      </Heading>
       {data &&
         data.map((ele, index) => {
           return (
-            <Flex key={index} border="1px solid black">
-              <VStack ml="10px" textAlign={"center"}>
-                <h1 style={{ fontSize: "40px" }}>{ele.question}</h1>
+            <Box
+              boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
+              padding="2%"
+              width="80%"
+              key={index}
+              margin="auto"
+              marginBottom="20px"
+            >
+              <Box style={{ marginBottom: "20px" }}>
+                <h1 style={{ textAlign: "left", marginBottom: "10px" }}>
+                  {" "}
+                  <span style={{ fontWeight: "bold" }}>Question:</span>{" "}
+                  {ele.question}
+                </h1>
 
                 <RadioGroup onChange={setValue} defaultValue="1">
-                  <Stack spacing={5} direction="row">
+                  <Stack direction="row">
                     <Radio value="option1">{ele.incorrectOption[0]}</Radio>
                     <Radio value="option2">{ele.incorrectOption[1]}</Radio>
                     <Radio value="option3">{ele.incorrectOption[2]}</Radio>
                     <Radio value="option4">{ele.correctOption}</Radio>
                   </Stack>
                 </RadioGroup>
-              </VStack>
-            </Flex>
+              </Box>
+            </Box>
           );
         })}
-    </VStack>
+    </Box>
   );
 };
 

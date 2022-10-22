@@ -27,14 +27,93 @@
   ],
   "question": [
     {
-      "question": "what is full form of WHO?",
-      "correctOption": "c",
+      "question": "What does CSS stand for?",
       "incorrectOption": [
-        "a",
-        "b",
-        "d"
+        "Computer Style Sheets",
+        "Creative Style Sheets",
+        "Colorful Style Sheets"
       ],
-      "id": 1
+      "correctOption": "Cascading Style Sheets",
+      "id":1
+    },
+
+    {
+      "question": "Where in an HTML document is the correct place to refer to an external style sheet?",
+      "incorrectOption": [
+        "In the <body> section",
+        "At the end of the document",
+        "You can't refer to an external style sheet"
+      ],
+      "correctOption": "In the <head> section",
+      "id":2
+    },
+    {
+      "question": "Which HTML tag is used to define an internal style sheet?",
+      "incorrectOption": ["<script>", "<headStyle>", "<css>"],
+      "correctOption": "<style>",
+      "id":3
+    },
+    {
+      "question": "Which HTML attribute is used to define inline styles?",
+      "incorrectOption": ["class", "font", "styles"],
+      "correctOption": "style",
+      "id":4
+    },
+    {
+      "question": "Which is the correct CSS syntax?",
+      "incorrectOption": [
+        "{body:color=black;}",
+        "{body;color:black;}",
+        "body:color=black;"
+      ],
+      "correctOption": "body {color: black;}",
+      "id":5
+    },
+    {
+      "question": "How do you insert a comment in a CSS file?",
+      "incorrectOption": [
+        "' this is a comment",
+        "// this is a comment",
+        "// this is a comment //"
+      ],
+      "correctOption": "/* this is a comment */",
+      "id":6
+    },
+    {
+      "question": "Which property is used to change the background color?",
+      "incorrectOption": ["color", "bgcolor", "bgColor"],
+      "correctOption": "background-color",
+      "id":7
+    },
+    {
+      "question": "How do you add a background color for all <h1> elements?",
+      "incorrectOption": [
+        "all.h1 {background-color:#FFFFFF;}",
+        "h1.setAll {background-color:#FFFFFF;}",
+        "h1.all {background-color:#FFFFFF;}"
+      ],
+      "correctOption": "h1 {background-color:#FFFFFF;}",
+      "id":8
+    },
+    {
+      "question": "Which one of the following parts of a computer looks like an animal?",
+      "incorrectOption": [
+        " Monitor",
+        "CPU",
+        "Keyboard"
+      ],
+      "correctOption": "Mouse",
+      "id":9
+    },
+    {
+      "question": "A ________ is a pointing part of a computer",
+      "incorrectOption": [
+        "Keyboard",
+        "RAM",
+        "h1.all {background-color:#FFFFFF;}"
+      ],
+      "correctOption": "Mouse",
+      "id":10
     }
   ]
 }
